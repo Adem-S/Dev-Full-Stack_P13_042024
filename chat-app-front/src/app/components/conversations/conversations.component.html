@@ -1,0 +1,38 @@
+<div class="conversations">
+  <div class="conversations-container" *ngIf="userRole === 'user'">
+    <h2>Nouvelle conversation</h2>
+    <form (ngSubmit)="createConversation()" class="create-conversation-form">
+      <div class="form-group">
+        <label for="title">Titre de la conversation</label>
+        <input
+          type="text"
+          id="title"
+          [(ngModel)]="conversationTitle"
+          name="title"
+          class="form-control"
+          placeholder="Thème de votre problème"
+        />
+      </div>
+      <button type="submit">Créer</button>
+    </form>
+  </div>
+  <div class="conversations-container">
+    <h2>Liste des conversations</h2>
+    <ng-container
+      *ngIf="conversations.length > 0; else noConversationsTemplate"
+    >
+      <ng-template ngFor let-conversation [ngForOf]="conversations">
+        <div class="conversation">
+          <p>{{ conversation.title }}</p>
+          <button (click)="joinConversation(conversation.conversationId)">
+            Rejoindre
+          </button>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <ng-template #noConversationsTemplate>
+      <p class="no-conversations-msg">Aucune conversation pour le moment.</p>
+    </ng-template>
+  </div>
+</div>

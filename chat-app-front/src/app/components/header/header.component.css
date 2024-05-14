@@ -1,0 +1,45 @@
+nav {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+}
+
+h1 {
+  margin: 15px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: lighter;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.user {
+  background-color: #0056b3;
+}
+
+.support {
+  background-color: #d63333;
+}
+
+nav img {
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+<nav>
+  <h1>
+    YOUR CAR <br />
+    YOUR WAY
+  </h1>
+  <div
+    *ngIf="userRole"
+    [ngClass]="userRole && userRole == 'user' ? 'user' : 'support'"
+  >
+    <button *ngIf="userRole" (click)="navigateToUserSelection()">
+      <img src="../../../assets/img/arrow_back_icon.svg" alt="arrow back" />
+    </button>
+    <p>{{ userRole && userRole == "user" ? "Utilisateur" : "Support" }}</p>
+  </div>
+</nav>

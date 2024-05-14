@@ -1,0 +1,34 @@
+.user-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-selection h2 {
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.user-selection h3 {
+  margin-bottom: 10px;
+}
+
+.user-selection button {
+  margin: 10px;
+  width: 180px;
+  background: #d63333;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.user-selection button:last-of-type {
+  background: #0056b3;
+}

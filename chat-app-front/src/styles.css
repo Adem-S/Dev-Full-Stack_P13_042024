@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh !important;
+  height: auto !important;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+input {
+  outline: none !important;
+}

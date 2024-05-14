@@ -1,0 +1,90 @@
+.conversations {
+  margin-top: 60px;
+}
+
+.conversations-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  width: 50%;
+  min-width: 340px;
+}
+
+.conversations-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.form-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.form-group input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-conversation-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.create-conversation-form button {
+  background-color: black;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  height: auto;
+  font-weight: bold;
+}
+
+.conversation {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.conversation p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  padding: 0 5px;
+}
+
+.conversation button {
+  color: #666;
+  font-weight: bold;
+  border-left: 2px solid #666;
+  padding-left: 5px;
+}
+
+.no-conversations-msg {
+  color: #666;
+  text-align: center;
+}

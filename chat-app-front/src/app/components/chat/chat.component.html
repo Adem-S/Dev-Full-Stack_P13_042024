@@ -1,0 +1,63 @@
+<div class="chat">
+  <button (click)="goBack()" class="btn-back">Retour</button>
+
+  <ng-container
+    *ngIf="conversation; else noConversationFound"
+    class="chat-section"
+  >
+    <div class="chat-header">
+      <h2>{{ conversation.title }}</h2>
+      <button (click)="deleteConversation()">Supprimer</button>
+    </div>
+
+    <div class="chat-messages" #scrollChat>
+      <div
+        *ngFor="let message of messages"
+        class="message"
+        [ngClass]="{
+          'my-message': message.senderRole === userRole,
+          'other-message': message.senderRole !== userRole
+        }"
+      >
+        <small>{{ message.date | date : "dd/MM/yyyy HH:mm" }}</small>
+        <p
+          [ngClass]="{
+            'my-message-user':
+              message.senderRole === userRole && userRole === 'user',
+            'my-message-support':
+              message.senderRole === userRole && userRole === 'support'
+          }"
+        >
+          {{ message.messageText }}
+        </p>
+      </div>
+      <div
+        *ngIf="
+          isLastMessageMine() &&
+          (conversation.userSeen || conversation.supportSeen)
+        "
+        class="message-status"
+      >
+        {{
+          (userRole === "user" && conversation.supportSeen) ||
+          (userRole === "support" && conversation.userSeen)
+            ? "Vu"
+            : "Envoyé"
+        }}
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input
+        type="text"
+        [(ngModel)]="newMessage"
+        placeholder="Nouveau message"
+      />
+      <button (click)="sendMessage()">Envoyer</button>
+    </div>
+  </ng-container>
+
+  <ng-template #noConversationFound>
+    <p class="no-conversation-found">Aucune conversation trouvée</p>
+  </ng-template>
+</div>
